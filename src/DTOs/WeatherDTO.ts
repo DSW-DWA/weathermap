@@ -32,7 +32,7 @@ interface Weather {
     precipitation: number;
   }
   
-  interface Hourly {
+  export interface Hourly {
     dt: number;
     temp: number;
     feels_like: number;
@@ -65,7 +65,7 @@ interface Weather {
     morn: number;
   }
   
-  interface Daily {
+  export interface Daily {
     dt: number;
     sunrise: number;
     sunset: number;

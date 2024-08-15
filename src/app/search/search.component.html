@@ -9,5 +9,5 @@
     </div>
 </ul>
 
-<app-weather-tables *ngIf="selectedGeoData != undefined"></app-weather-tables>
+<app-weather-tables *ngIf="selectedGeoData != undefined" [weatherData]="weather$ | async"></app-weather-tables>
 

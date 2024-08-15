@@ -1,1 +1,46 @@
-<p>weather-tables works!</p>
+<div *ngIf="weatherData">
+    <h3>Hourly Forecast</h3>
+    <table border="1">
+      <tr>
+        <th>Time</th>
+        <th>Temperature</th>
+        <th>Feels Like</th>
+        <th>Pressure</th>
+        <th>Humidity</th>
+        <th>Weather</th>
+      </tr>
+      <tr *ngFor="let hour of getHourlyData()">
+        <td>{{ formatDate(hour.dt) }}</td>
+        <td>{{ hour.temp }}°C</td>
+        <td>{{ hour.feels_like }}°C</td>
+        <td>{{ hour.pressure }} hPa</td>
+        <td>{{ hour.humidity }}%</td>
+        <td>{{ hour.weather[0]?.description }}</td>
+      </tr>
+    </table>
+  
+    <h3>Daily Forecast</h3>
+    <table border="1">
+      <tr>
+        <th>Date</th>
+        <th>Temperature</th>
+        <th>Feels Like</th>
+        <th>Pressure</th>
+        <th>Humidity</th>
+        <th>Weather</th>
+      </tr>
+      <tr *ngFor="let day of getDailyData()">
+        <td>{{ formatDate(day.dt) }}</td>
+        <td>
+          Max: {{ day.temp.max }}°C, Min: {{ day.temp.min }}°C
+        </td>
+        <td>
+          Day: {{ day.feels_like.day }}°C, Night: {{ day.feels_like.night }}°C
+        </td>
+        <td>{{ day.pressure }} hPa</td>
+        <td>{{ day.humidity }}%</td>
+        <td>{{ day.weather[0]?.description }}</td>
+      </tr>
+    </table>
+  </div>
+  

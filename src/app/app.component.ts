@@ -13,7 +13,5 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) {
   }
   ngOnInit() {
-    this.apiService.getGeo('Moscow').subscribe((data) => {console.log(data)});
-    
   }
 }
