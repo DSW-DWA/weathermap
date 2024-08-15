@@ -8,10 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
+import { FormatGeoPipe } from './pipes/format-geo.pipe';
+import { WeatherTablesComponent } from './weather-tables/weather-tables.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    FormatGeoPipe,
+    WeatherTablesComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient(),

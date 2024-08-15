@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="searchQuery" (ngModelChange)="search()" placeholder="Search..." />
+
+<ul *ngIf="(results$ | async) as results">
+    <li *ngFor="let result of results" (click)="selectGeoData(result)">
+        {{ result | formatGeo}}
+    </li>
+    <div *ngIf="results.length == 0">
+        <p>Город не найден</p>
+    </div>
+</ul>
+
+<app-weather-tables *ngIf="selectedGeoData != undefined"></app-weather-tables>
+
